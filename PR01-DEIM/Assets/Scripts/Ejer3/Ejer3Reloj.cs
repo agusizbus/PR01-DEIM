@@ -18,25 +18,21 @@ public class Ejer3Reloj : MonoBehaviour
     {
         for (s = 0; ; s++)
         {
-            Reloj();
+            if (s > 59)
+            {
+                m++;
+                s = 0;
+            }
+
+            if (m > 59)
+            {
+                h++;
+                m = 0;
+            }
+            print(h + "h:" + m + "m:" + s + "s");
+
             yield return new WaitForSeconds(1f);
         }
-    }
-
-    void Reloj ()
-    {
-        if (s > 59)
-        {   
-            m++;
-            s = 0;
-        }
-
-        if (m > 59)
-        {
-            h++;
-            m = 0;
-        }
-        print(h + ":" + m + ":" + s + ":");
     }
 }
 
